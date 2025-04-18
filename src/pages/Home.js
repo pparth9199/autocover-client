@@ -2,7 +2,7 @@
 import React, { useState, useMemo } from 'react'
 import {
   Container, Typography, TextField, Button, Box,
-  Stepper, Step, StepLabel, StepIconProps, Select, MenuItem, Paper,
+  Stepper, Step, StepLabel, Select, MenuItem, Paper,
   IconButton, Snackbar, Tooltip
 } from '@mui/material'
 import { jsPDF } from 'jspdf'
@@ -23,9 +23,9 @@ function Home({ darkMode }) {
   const [resume, setResume] = useState('')
   const [jobPost, setJobPost] = useState('')
   const [tone, setTone] = useState('professional')
+  // eslint-disable-next-line
   const [letter, setLetter] = useState('')
   const [company, setCompany] = useState('')
-  const [loading, setLoading] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
   const [editedLetter, setEditedLetter] = useState('')
   const [copied, setCopied] = useState(false)
@@ -34,7 +34,6 @@ function Home({ darkMode }) {
   const handleBack = () => setActiveStep((prev) => prev - 1)
 
   const handleGenerate = async () => {
-    setLoading(true)
     const response = await fetch('https://autocover-server.onrender.com/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -45,7 +44,6 @@ function Home({ darkMode }) {
     setEditedLetter(data.letter)
     setCompany(data.company)
     setIsEditing(false)
-    setLoading(false)
     handleNext()
   }
 

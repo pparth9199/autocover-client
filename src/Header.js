@@ -1,6 +1,6 @@
 // src/Header.js
 import React from 'react'
-import { AppBar, Toolbar, Typography, Button, Box, Switch, IconButton } from '@mui/material'
+import { AppBar, Toolbar, Typography, Button, Box, IconButton } from '@mui/material'
 import { Link } from 'react-router-dom'
 import Logo from './assets/logo.png'
 import { FaMoon, FaSun } from 'react-icons/fa'
