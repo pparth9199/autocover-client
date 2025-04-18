@@ -18,8 +18,6 @@ const StepIcons = {
   4: <FaPaperPlane />       // Generate
 }
 
-
-
 function Home({ darkMode }) {
   const [activeStep, setActiveStep] = useState(0)
   const [resume, setResume] = useState('')
@@ -37,7 +35,7 @@ function Home({ darkMode }) {
 
   const handleGenerate = async () => {
     setLoading(true)
-    const response = await fetch('http://localhost:8000/generate', {
+    const response = await fetch('https://autocover-server.onrender.com/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ resume, jobPost, tone })
